@@ -1,25 +1,24 @@
 * {
   box-sizing: border-box;
-  margin: 1;
-  text-align: center;
 }
 
-h1{
+h1 {
   color: goldenrod;
   text-align: center;
   background-color: #36454F;
   padding: 20px 0;
   margin: 0;
-  font-family: 'Times New Roman', sans-serif;
+  font-family: 'Times New Roman', serif;
   font-size: 2.7em;
   letter-spacing: 1px;
 }
 
 body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   color: black;
   background-color: aliceblue;
+  text-align: center;
 }
 
 #main-heading {
@@ -27,6 +26,8 @@ body {
   text-align: center;
   margin-bottom: 40px;
   font-size: 2.2rem;
+  background-color: transparent;
+  padding: 20px 0 0;
 }
 
 .highlight {
@@ -35,10 +36,23 @@ body {
   padding: 6px;
   border-radius: 3px;
   font-size: 14pt;
+  display: inline-block;
+  margin: 10px auto;
 }
+
 h2 {
   color: royalblue;
   font-weight: bolder;
+}
+
+.text-box {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 20px 30px;
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: left;
 }
 
 nav {
@@ -63,7 +77,11 @@ nav a {
   color: #555;
   cursor: pointer;
   transition: background 0.3s;
-  
+}
+
+nav a:hover {
+  background-color: #e8edf5;
+  color: #000;
 }
 
 nav a[aria-current='page'] {
@@ -75,8 +93,7 @@ main {
   padding: 1rem;
 }
 
-/* 404 Page Specific Styling */
-
+/* 404 / Error page */
 .error-container {
   text-align: center;
   padding: 100px 20px;
@@ -109,27 +126,26 @@ main {
   background-color: #025aa5;
 }
 
+/* Services / Gallery */
 .gallery-container {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Title */
 .gallery-title {
   margin-bottom: 40px;
   font-size: 2.2rem;
   color: goldenrod;
 }
 
-/* Grid Layout */
 .grid-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
+  padding: 0 20px 30px;
 }
 
-/* Individual Gallery Item */
 .gallery-item {
   background: #fff;
   border-radius: 10px;
@@ -138,14 +154,12 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Image Styling */
 .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Title Under Image */
 .gallery-item h2 {
   font-size: 1.2rem;
   margin: 15px 0 10px;
@@ -153,7 +167,6 @@ main {
   text-align: center;
 }
 
-/* Description */
 .gallery-item p {
   font-size: 0.95rem;
   padding: 0 15px 20px;
@@ -161,20 +174,17 @@ main {
   text-align: center;
 }
 
-/* Hover Effect will eventually have a page dedicated to each image.*/
 .gallery-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/*Connect Page*/
-* Intro section */
+/* Contact page */
 .contact-intro {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Form styling */
 form {
   background: #fff;
   padding: 20px;
@@ -182,6 +192,7 @@ form {
   max-width: 500px;
   margin: 0 auto 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: left;
 }
 
 label {
@@ -217,8 +228,7 @@ button:hover {
   background-color: goldenrod;
 }
 
-/* Contact info section */
-/* Popup background */
+/* Popup */
 .popup {
   position: fixed;
   top: 0;
@@ -232,7 +242,6 @@ button:hover {
   z-index: 1000;
 }
 
-/* Popup box */
 .popup-content {
   background: white;
   padding: 25px 35px;
@@ -245,6 +254,7 @@ button:hover {
 .popup-content button {
   margin-top: 15px;
   padding: 8px 18px;
+  width: auto;
   border: none;
   background: #2c7be5;
   color: white;
@@ -259,5 +269,5 @@ button:hover {
 
 @keyframes fadeIn {
   from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  to   { transform: scale(1); opacity: 1; }
 }

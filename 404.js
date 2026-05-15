@@ -1,32 +1,18 @@
-// 404 handler (must be last)
-app.use((req, res) => {
-  res.status(404).sendFile(__dirname + "/public/404.html");
-});
-const express = require("express");
-const cors = require("cors");
-const app = express();
-const PORT = 5000;
+// Redirect unknown routes to the error page
+(function () {
+  const validPages = [
+    "index.html", "about.html", "servicepage.html", "connectpage.html",
+    "errorpage.html", "404.html",
+    "vanessa.html", "daniel.html", "regan.html", "jaime.html",
+    "nyra.html", "kenji.html", "omar.html", "abigail.html"
+  ];
 
-app.use(cors());
-app.use(express.json());
-app.use(express.static("public"));
+  const path = window.location.pathname.toLowerCase();
+  const filename = path.split("/").pop() || "index.html";
 
-app.post("/contact", (req, res) => {
-  const { name, email, message } = req.body;
+  const isValid = filename === "" || validPages.includes(filename);
 
-  if (!name || !email || !message) {
-    return res.status(400).send("Please fill out all fields");
+  if (!isValid) {
+    window.location.href = "/404.html";
   }
-
-  console.log("New message:", name, email, message);
-  res.send("Message sent successfully!");
-});
-
-// 404 handler
-app.use((req, res) => {
-  res.status(404).sendFile(__dirname + "/public/404.html");
-});
-
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
-});
+})();

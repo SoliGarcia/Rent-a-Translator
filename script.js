@@ -4,13 +4,13 @@ const closeBtn = document.getElementById("closePopup");
 
 if (form) {
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); // stop refresh
-
-    // Show popup
+    event.preventDefault();
     popup.style.display = "flex";
-
-    // Clear form
     form.reset();
+
+    setTimeout(function () {
+      popup.style.display = "none";
+    }, 3000);
   });
 }
 
@@ -19,7 +19,3 @@ if (closeBtn) {
     popup.style.display = "none";
   });
 }
-
-setTimeout(() => {
-  popup.style.display = "none";
-}, 3000);
