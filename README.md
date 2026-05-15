@@ -26,7 +26,7 @@ npm install
 node server.js
 
 Future Improvements:
-Add more javascript to webpages as well as css.
+added bootstrap 5 and vue to project
 
 Author
 Soli Garcia
